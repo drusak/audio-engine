@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.komspek.battlemeaudio.RecordV2Activity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ToggleButton
+            android:id="@+id/btn_record_beat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textOff="Record Beat"
+            android:textOn="Record Stop"
+            tools:ignore="HardcodedText"/>
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:id="@+id/progress_beat"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintLeft_toRightOf="@+id/btn_record_beat"
+            app:layout_constraintTop_toTopOf="@+id/btn_record_beat"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_record_beat"
+            android:visibility="invisible"/>
+
+        <ToggleButton
+            android:id="@+id/btn_playback_beat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textOff="Play"
+            android:textOn="Pause"
+            tools:ignore="HardcodedText"
+            android:visibility="invisible"/>
+
+        <RelativeLayout
+            android:id="@+id/container_voice_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btn_record_beat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="invisible">
+
+            <ToggleButton
+                android:id="@+id/btn_record_voice_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Record Voice1 with Beat"
+                android:textOn="Record Stop"
+                tools:ignore="HardcodedText"/>
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:id="@+id/progress_voice_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"
+                android:layout_toEndOf="@+id/btn_record_voice_1"/>
+
+            <ToggleButton
+                android:id="@+id/btn_playback_voice_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Play"
+                android:textOn="Pause"
+                tools:ignore="HardcodedText"
+                android:visibility="invisible"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_sample_rate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_voice_1"
+            android:text="Sample Rate: "
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/tv_sample_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_sample_rate_title"
+            app:layout_constraintLeft_toRightOf="@+id/tv_sample_rate_title"
+            tools:text="0"
+            android:textColor="@android:color/black"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/tv_buffer_size_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sample_rate_title"
+            android:text="Buffer Size: "
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/tv_buffer_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_buffer_size_title"
+            app:layout_constraintLeft_toRightOf="@+id/tv_buffer_size_title"
+            tools:text="0"
+            android:textColor="@android:color/black"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/tv_low_latency_feature_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_buffer_size_title"
+            android:text="Has Low-latency feature: "
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/tv_low_latency_feature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_low_latency_feature_title"
+            app:layout_constraintLeft_toRightOf="@+id/tv_low_latency_feature_title"
+            tools:text="true"
+            android:textColor="@android:color/black"
+            tools:ignore="HardcodedText"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
